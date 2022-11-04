@@ -21,7 +21,7 @@ class MainView : View("WebDAV Player") {
     private val model = object : ViewModel() {
         val url = bind { SimpleStringProperty(Utils.properties.getProperty("default.url")) }
         val username = bind { SimpleStringProperty(Utils.properties.getProperty("default.username")) }
-        val password = bind { SimpleStringProperty() }
+        val password = bind { SimpleStringProperty(Utils.properties.getProperty("default.secret")) }
     }
 
     fun updateTable(daoElements: ArrayList<DAVElement>) {
